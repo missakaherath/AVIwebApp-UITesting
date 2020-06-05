@@ -1,0 +1,27 @@
+package newTest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AddAdminsPage {
+	public static void main(String[] args) {
+		
+	}
+	
+	public static void testAddAdmin() {
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://localhost:8080/AVI_registration_system/addAdmin.php");
+		driver.manage().window().maximize();
+		
+		//submit without data
+		driver.findElement(By.className("add_admin")).click();
+		String at = driver.getTitle();
+		String et = "Add Admin";
+		if(at.equalsIgnoreCase(et)) {
+			System.out.println("form wasnt submitted without data, test passed");
+		} else {
+			System.out.println("form submitted without data, test failed");
+		}
+	}
+}

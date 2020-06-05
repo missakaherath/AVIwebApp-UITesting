@@ -1,0 +1,37 @@
+package newTest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeliumTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "F:\\softwares\\new selenium\\exefiles\\chromedriver.exe");
+//		WebDriver driver = new ChromeDriver();
+//		driver.get("http://www.gmail.com/");
+//		driver.manage().window().maximize();
+//		driver.findElement(By.id("identifierId")).sendKeys("missakaherath96@gmail.com");
+//		driver.findElement(By.className("CwaK9")).click();
+//		String at = driver.getTitle();
+//		String et = "gmail";
+//		driver.close();
+//		if(at.equalsIgnoreCase(et)) {
+//			System.out.println("Passed");
+//		} else {
+//		System.out.println("Failed");
+//		}
+	}
+	public void testLogin() {
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://localhost:8080/AVI_registration_system/login.php");
+		driver.manage().window().maximize();
+		driver.findElement(By.name("password")).sendKeys("admin123");
+		driver.findElement(By.name("login_admin")).click();
+		String at = driver.getTitle();
+		System.out.println(at);
+		driver.close();
+	}
+
+}

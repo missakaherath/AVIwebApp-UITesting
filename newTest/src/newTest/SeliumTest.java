@@ -1,0 +1,35 @@
+package newTest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeliumTest {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		AddAdminsPage addAdminPage = new AddAdminsPage();
+		LoginPage loginPage = new LoginPage();
+		AddGeneralUserPage addGeneralUserPage = new AddGeneralUserPage();
+		
+		System.setProperty("webdriver.chrome.driver", "F:\\softwares\\new selenium\\exefiles\\chromedriver.exe");
+
+		//test add admin page
+//		addAdminPage.testAddAdmin(); 
+		
+		//test the login page
+//		loginPage.testLogin();
+		
+		//test add general user page
+		addGeneralUserPage.testAddGenUser();
+	}
+	
+	public static void login() { //login function
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://localhost:8080/AVI_registration_system/login.php");
+		driver.manage().window().maximize();
+		driver.findElement(By.name("password")).sendKeys("admin123");
+		driver.findElement(By.name("login_admin")).click();
+	}
+}

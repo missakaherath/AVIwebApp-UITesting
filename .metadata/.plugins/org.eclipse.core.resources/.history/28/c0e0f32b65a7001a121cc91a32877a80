@@ -1,0 +1,45 @@
+package newTest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeliumTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "F:\\softwares\\new selenium\\exefiles\\chromedriver.exe");
+		test(); //test admin login
+	}
+	
+	public static void login() {
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://localhost:8080/AVI_registration_system/login.php");
+		driver.manage().window().maximize();
+		driver.findElement(By.name("password")).sendKeys("admin123");
+		driver.findElement(By.name("login_admin")).click();
+	}
+	
+	public static void testLogin() {
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://localhost:8080/AVI_registration_system/login.php");
+		driver.manage().window().maximize();
+		driver.findElement(By.name("password")).sendKeys("admin123");
+		driver.findElement(By.name("login_admin")).click();
+		String at = driver.getTitle();
+		String et = "AVI registration home";
+		driver.close();
+		if(at.equalsIgnoreCase(et)) {
+			System.out.println("Login Test Passed");
+		} else {
+			System.out.println("Login Test Failed");
+		}
+	}
+	
+	public static void test() {
+		WebDriver driver = new ChromeDriver();
+		login();
+		driver.get("http://localhost:8080/AVI_registration_system/viewBlockedVehicles.php");
+	}
+
+}
