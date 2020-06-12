@@ -22,6 +22,7 @@ public class LoginPage {
 		Thread.sleep(2000);
 		
 		//submit with the correct password
+		driver.findElement(By.name("username")).sendKeys("Missaka");
 		driver.findElement(By.name("password")).sendKeys("admin123");
 		driver.findElement(By.name("login_admin")).click();
 		String at2 = driver.getTitle();

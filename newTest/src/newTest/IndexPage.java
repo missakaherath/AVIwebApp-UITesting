@@ -9,6 +9,7 @@ public class IndexPage {
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://localhost:8080/AVI_registration_system/login.php");
 		driver.manage().window().maximize();
+		driver.findElement(By.name("username")).sendKeys("Missaka");
 		driver.findElement(By.name("password")).sendKeys("admin123");
 		driver.findElement(By.name("login_admin")).click();
 		Thread.sleep(2000);

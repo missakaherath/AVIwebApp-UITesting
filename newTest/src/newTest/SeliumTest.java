@@ -37,7 +37,7 @@ public class SeliumTest {
 		
 		//test released vehicles page
 		//test search released vehicle
-//		releasedVehiclePage.testSearchReleasedVehicles();
+		releasedVehiclePage.testSearchReleasedVehicles();
 		
 		//test admin list page
 		//test search admin
@@ -57,7 +57,7 @@ public class SeliumTest {
 		
 		//test index page
 		//test logging out functionality
-		indexPage.testLogout();
+//		indexPage.testLogout();
 		
 	}
 }

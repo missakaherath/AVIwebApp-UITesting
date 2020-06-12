@@ -11,6 +11,7 @@ public class AddAdminsPage {
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://localhost:8080/AVI_registration_system/login.php");
 		driver.manage().window().maximize();
+		driver.findElement(By.name("username")).sendKeys("Missaka");
 		driver.findElement(By.name("password")).sendKeys("admin123");
 		driver.findElement(By.name("login_admin")).click();
 		Thread.sleep(2000);
@@ -25,41 +26,11 @@ public class AddAdminsPage {
 		String at = driver.getTitle();
 		String et = "Add Admin";
 		if(at.equalsIgnoreCase(et)) {
-			System.out.println("form wasnt submitted without data, test passed");
+			System.out.println("test passed");
 		} else {
-			System.out.println("form submitted without data, test failed");
+			System.out.println("test failed");
 		}
-		
-		//submit with an empty password
-		driver.findElement(By.name("fullName")).sendKeys("test2");
-		driver.findElement(By.name("regNo")).sendKeys("test2");
-		driver.findElement(By.name("username")).sendKeys("test2");
-		Thread.sleep(2000);
-		
-		driver.findElement(By.name("add_admin")).click();
-		Thread.sleep(2000);
-		
-		String at2 = driver.getTitle();
-		if(at2.equalsIgnoreCase(et)) {
-			System.out.println("form wasnt submitted without a password, test passed");
-		} else {
-			System.out.println("form submitted without a password, test failed");
-		}
-		
-		//submit with all fields filled
-		driver.findElement(By.name("password")).sendKeys("test2");
-		Thread.sleep(2000);
-		driver.findElement(By.name("add_admin")).click();
-		
-		String at3 = driver.getTitle();
-		String et2 = "Admin List";
 		
 		driver.close();
-		
-		if(at3.equalsIgnoreCase(et2)) {
-			System.out.println("Add admin test passed");
-		} else {
-			System.out.println("Add admin test failed");
-		}
 	}
 }

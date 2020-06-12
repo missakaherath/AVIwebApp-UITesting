@@ -10,6 +10,7 @@ public class BlacklistedVehiclesPage {
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://localhost:8080/AVI_registration_system/login.php");
 		driver.manage().window().maximize();
+		driver.findElement(By.name("username")).sendKeys("Missaka");
 		driver.findElement(By.name("password")).sendKeys("admin123");
 		driver.findElement(By.name("login_admin")).click();
 		Thread.sleep(2000);
@@ -27,18 +28,6 @@ public class BlacklistedVehiclesPage {
 			System.out.println("test failed");
 		}
 		
-		//search with a string
-		driver.findElement(By.name("search")).sendKeys("plate");
-		Thread.sleep(2000);
-		driver.findElement(By.name("submit-search")).click();
-		String at2 = driver.getTitle();
-		String et2 = "Search Results";
-		if(at2.equalsIgnoreCase(et2)) {
-			System.out.println("search blocked vehicle test passed");
-		} else {
-			System.out.println("test failed");
-		}
-		
 		driver.close();
 	}
 	
@@ -46,6 +35,7 @@ public class BlacklistedVehiclesPage {
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://localhost:8080/AVI_registration_system/login.php");
 		driver.manage().window().maximize();
+		driver.findElement(By.name("username")).sendKeys("Missaka");
 		driver.findElement(By.name("password")).sendKeys("admin123");
 		driver.findElement(By.name("login_admin")).click();
 		Thread.sleep(2000);
